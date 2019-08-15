@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Simple lead input!</title>
+    <base href="/index.html">
+    <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+    <meta name="keywords" content="docker-compose, docker, stack">
+    <meta name="author" content="Alefh Sousa">
+    <link rel='stylesheet' href="{{ url_for('static',filename='stylesheets/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  </head>
+  <body>
+
+
+
+{% if show_alert %}
+    <div class="alert alert-success" role="alert">
+        The email {{email}} was subscribe with success
+    </div>
+{% endif %}
+
+<form class="border border-light p-5" action="/register" method="POST">
+
+    <div class="text-center">
+        <p class="h4 mb-4">Simple Lead</p>
+
+        <p>Join our mailing list. We write rarely, but only the best content.</p>
+
+        <p>
+            <a href="https://www.google.com/" target="_blank">See the last newsletter</a>
+        </p>
+    </div>
+
+    <input type="text" id="name" name="name" class="form-control mb-4" placeholder="Name">
+
+    <input type="email" id="email" name="email" class="form-control mb-4" placeholder="E-mail">
+
+    <button class="btn btn-info btn-block" type="submit">Register</button>
+</form>
